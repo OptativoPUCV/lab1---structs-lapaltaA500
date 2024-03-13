@@ -5,3 +5,14 @@ Wed 13 Mar 2024 09:11:30 PM UTC:
  tests:  0|7
 total_score: 0/70
 3379e04
+Wed 13 Mar 2024 09:14:40 PM UTC: 
+ exercises.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+In file included from test.c:1:
+exercises.c: In function ‘reverseArray’:
+exercises.c:32:7: error: unused variable ‘temp’ [-Werror=unused-variable]
+   32 |   int temp;
+      |       ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+e383cd1
