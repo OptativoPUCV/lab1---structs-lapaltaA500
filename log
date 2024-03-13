@@ -34,3 +34,13 @@ Wed 13 Mar 2024 09:16:28 PM UTC:
  tests:  0|7
 total_score: 0/70
 02b206d
+Wed 13 Mar 2024 09:16:54 PM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:1:
+exercises.c: In function ‘findMax’:
+exercises.c:14:17: error: expected expression before ‘]’ token
+   14 |   int max = arr[];
+      |                 ^
+Compilation failed
+944c27d
