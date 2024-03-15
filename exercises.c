@@ -11,19 +11,11 @@ y su tamaño, y devuelva el valor más grande del arreglo.
 */
 int findMax(int arr[], int size) 
 {
-  if (size <= 0)
-  {
-    return -1;
-  }
-  
+  if (size <= 0) return -1;
   int max = arr[0];
-
   for (int i = 1 ; i < size ; i++)
     {
-      if (arr[i] > max)
-      {
-        max = arr[i];
-      }
+      if (arr[i] > max) max = arr[i];
     }
   return max;
 }
@@ -35,9 +27,8 @@ invierta el orden de sus elementos.
 */
 void reverseArray(int arr[], int size) 
 {
-  if (size <= 0)
-    return;
-  
+  if (size <= 0) return;
+
   int inicio = 0;
   int final = (size - 1);
   while (inicio < final)
@@ -58,9 +49,8 @@ los números pares del arreglo original.
 */
 int *filterEvenNumbers(int arr[], int size, int *newSize) 
 {
-  if (size <= 0)
-    return NULL;
-  
+  if (size <= 0) return NULL;
+
   int *arreglo = malloc(size * sizeof(int));
   int contador = 0;
   for (int i = 0 ; i < size ; i++)
@@ -83,39 +73,35 @@ ordenados y sus tamaños, y luego fusione estos dos
 arreglos en un tercer arreglo también ordenado.
 */
 void mergeSortedArrays(int arr1[], int size1, int arr2[], int size2,
-                       int result[]) 
+                       int arreglo3[]) 
 {
-  if(size1 <= 0 || size2 <= 0)
-    return;
+  if(size1 <= 0 || size2 <= 0) return;
 
-  int a = 0;
-  int b = 0;
-  int c = 0;
-
+  int a = 0, b = 0, c = 0;
   while (a < size1 && b < size2)
     {
       if (arr1[a] < arr2[b])
       {
-        arr3[c] = arr1[a];
+        arreglo3[c] = arr1[a];
         a++;
       }
       else
       {
-        arr3[c] = arr2[b];
+        arreglo3[c] = arr2[b];
         b++;
       }
       c++;
     }
   while (a < size1)
     {
-      arr3[c] = arr1[a];
+      arreglo3[c] = arr1[a];
       a++;
       c++;
     }
-  
+
   while (b < size2)
     {
-      arr3[c] = arr2[b];
+      arreglo3[c] = arr2[b];
       b++;
       c++;
     }
@@ -129,45 +115,21 @@ y luego devuelva 1 si el arreglo está ordenado en orden ascendente,
 */
 int checkSorted(int arr[], int size) 
 {
-  if (size <= 0)
-    {
-      return -1;
-    }
-  int creciente = 1;
-  int decreciente = 1;
+  if (size <= 0) return -1;
+
+  int ordenA = 1, ordenD = 1;
   for (int i = 0 ; i < size - 1 ; i++)
+    {
+      if (arr[i] > arr[i + 1]) ordenA = 0;
+
+      if (arr[i] < arr[i + 1]) ordenD = 0;
+    }
+  if (ordenA == 1) return 1;
+  else
   {
-    if(arr[i] < arr[i+1] && creciente == 1)
-    {
-      creciente = 1;
-    }
-    else
-    {
-      creciente = 0;
-    }
-    if(arr[i] > arr[i+1] && decreciente == 1)
-    {
-      decreciente = 1;
-    }
-    else
-    {
-      decreciente = 0;
-    }
-  }
-  if (creciente == 1)
-  {
-    return 1;
-  }
-  else 
-    if (decreciente == 1)
-    {
-      return -1;
-    }
-    else
-    {
-      return 0;
-    }
-  }
+    if (ordenD == 1) return -1;
+    else return 0;
+  }  
 }
 
 /*
@@ -178,19 +140,27 @@ información utilizando estructuras anidadas en C. Escribe la función para
 inicializar la información de un libro.
 */
 
-typedef struct {
+typedef struct 
+{
   char nombre[50];
   int anioNacimiento;
 } Autor;
 
-typedef struct {
+typedef struct 
+{
   char titulo[100];
   Autor autor;
   int anioPublicacion;
 } Libro;
 
 void inicializarLibro(Libro *libro, const char *titulo, const char *nombreAutor,
-                      int anioNacimiento, int anioPublicacion) {}
+                      int anioNacimiento, int anioPublicacion) 
+{
+  strcpy(libro->titulo, titulo);
+  strcpy(libro->autor.nombre, nombreAutor);
+  libro->autor.anioNacimiento = anioNacimiento;
+  libro->anioPublicacion = anioPublicacion;
+}
 
 /*
 Ejercicio 7: Lista enlazada de números
@@ -203,9 +173,35 @@ lista enlazada.
 Recuerda reservar memoria dinámica para cada nodo usando malloc.
   */
 
-typedef struct nodo {
+typedef struct nodo 
+{
   int numero;
   struct nodo *siguiente; // puntero al siguiente nodo
 } Nodo;
 
-Nodo *crearListaEnlazada(int arr[], int size) { return NULL; }
+Nodo *crearListaEnlazada(int arr[], int size) 
+{
+  if (size <= 0) return NULL;
+
+  Nodo *primerN = NULL;
+  Nodo *ultimoN = NULL;
+  for (int i = 0 ; i < size ; i++)
+    {
+      Nodo *newNodo = malloc(sizeof(Nodo));
+      newNodo->numero = arr[i];
+      newNodo->siguiente = NULL;
+      if (primerN == NULL)
+      { 
+        primerN = newNodo;
+        ultimoN = newNodo;
+      }
+      else
+      {
+        ultimoN->siguiente = newNodo;
+        ultimoN = newNodo;
+      }
+    }
+  return primerN; 
+  return NULL;
+}
+///
