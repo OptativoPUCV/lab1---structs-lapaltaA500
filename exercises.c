@@ -112,13 +112,7 @@ void mergeSortedArrays(int arr1[], int size1, int arr2[], int size2,
       a++;
       c++;
     }
-
-  while (b < size1)
-    {
-      result[c] = arr1[a];
-      b++;
-      c++;
-    }
+  
   while (b < size2)
     {
       result[c] = arr2[b];
