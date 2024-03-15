@@ -43,9 +43,9 @@ void reverseArray(int arr[], int size)
   int final = (size - 1);
   while (inicio < final)
     {
-      int temp = arr[inicio];
+      int i = arr[inicio];
       arr[inicio] = arr[final];
-      arr[final] = temp;
+      arr[final] = i;
       inicio++;
       final--;
     }
