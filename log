@@ -237,3 +237,19 @@ exercises.c:99:9: error: ‘arr3’ undeclared (first use in this function); did
 exercises.c:99:9: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 846265f
+Fri 15 Mar 2024 10:02:59 PM UTC: 
+ exercises.c | 1 +
+ 1 file changed, 1 insertion(+)
+In file included from test.c:1:
+exercises.c: In function ‘mergeSortedArrays’:
+exercises.c:99:9: error: ‘arr3’ undeclared (first use in this function); did you mean ‘arr2’?
+   99 |         arr3[c] = arr1[a];
+      |         ^~~~
+      |         arr2
+exercises.c:99:9: note: each undeclared identifier is reported only once for each function it appears in
+exercises.c: At top level:
+exercises.c:170:1: error: expected identifier or ‘(’ before ‘}’ token
+  170 | }
+      | ^
+Compilation failed
+c5e66b2
