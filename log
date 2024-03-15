@@ -119,3 +119,9 @@ exercises.c:43:7: error: unused variable ‘start’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 3a04ac9
+Fri 15 Mar 2024 09:22:53 PM UTC: 
+ exercises.c | 12 +++++++-----
+ 1 file changed, 7 insertions(+), 5 deletions(-)
+ tests:  0|5
+total_score: 20/70
+3010f6b
