@@ -60,7 +60,7 @@ int *filterEvenNumbers(int arr[], int size, int *newSize)
 {
   if (size <= 0)
     return NULL;
-
+  
   int *arreglo = malloc(size * sizeof(int));
   int contador = 0;
   for (int i = 0 ; i < size ; i++)
@@ -73,7 +73,6 @@ int *filterEvenNumbers(int arr[], int size, int *newSize)
     }
   *newSize = contador;
   return arreglo;    
-  
   return NULL; 
 }
 
@@ -84,7 +83,41 @@ ordenados y sus tamaños, y luego fusione estos dos
 arreglos en un tercer arreglo también ordenado.
 */
 void mergeSortedArrays(int arr1[], int size1, int arr2[], int size2,
-                       int result[]) {}
+                       int result[]) 
+{
+  if(size1 <= 0 || size2 <= 0)
+    return;
+
+  int a = 0;
+  int b = 0;
+  int c = 0;
+  while (a < size1 && b < size2)
+    {
+      if (arr1[a] < arr2[b])
+      {
+        result[c] = arr1[a];
+        i++;
+      }
+      else
+      {
+        result[c] = arr2[b];
+        b++;
+      }
+      c++;
+    }
+  while (b < size1)
+    {
+      result[c] = arr1[a];
+      b++;
+      c++;
+    }
+  while (b < size2)
+    {
+      result[c] = arr2[b];
+      b++;
+      c++;
+    }
+}
 
 /*
 Ejercicio 5: Comprobación de Ordenación
