@@ -183,3 +183,9 @@ exercises.c:99:9: error: ‘i’ undeclared (first use in this function)
 exercises.c:99:9: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 4e74778
+Fri 15 Mar 2024 09:41:12 PM UTC: 
+ exercises.c | 9 +--------
+ 1 file changed, 1 insertion(+), 8 deletions(-)
+ tests:  0|4
+total_score: 30/70
+7f61d17

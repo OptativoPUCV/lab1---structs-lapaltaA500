@@ -91,12 +91,13 @@ void mergeSortedArrays(int arr1[], int size1, int arr2[], int size2,
   int a = 0;
   int b = 0;
   int c = 0;
+
   while (a < size1 && b < size2)
     {
       if (arr1[a] < arr2[b])
       {
         result[c] = arr1[a];
-        i++;
+        a++;
       }
       else
       {
@@ -105,13 +106,6 @@ void mergeSortedArrays(int arr1[], int size1, int arr2[], int size2,
       }
       c++;
     }
-
-  while (a < size1) 
-  {
-      result[c] = arr1[a];
-      a++;
-      c++;
-  }
 
   while (b < size1)
     {
