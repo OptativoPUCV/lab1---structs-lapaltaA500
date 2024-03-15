@@ -172,3 +172,14 @@ exercises.c:99:9: error: ‘i’ undeclared (first use in this function)
 exercises.c:99:9: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 c02e10f
+Fri 15 Mar 2024 09:39:45 PM UTC: 
+ exercises.c | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+In file included from test.c:1:
+exercises.c: In function ‘mergeSortedArrays’:
+exercises.c:99:9: error: ‘i’ undeclared (first use in this function)
+   99 |         i++;
+      |         ^
+exercises.c:99:9: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+4e74778
