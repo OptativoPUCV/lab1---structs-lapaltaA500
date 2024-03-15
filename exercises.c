@@ -133,32 +133,33 @@ int checkSorted(int arr[], int size)
     {
       return -1;
     }
-    int creciente = 1;
-    int decreciente = 1;
-    for (int i = 0 ; i < size - 1 ; i++)
+  int creciente = 1;
+  int decreciente = 1;
+  for (int i = 0 ; i < size - 1 ; i++)
+  {
+    if(arr[i] < arr[i+1] && creciente == 1)
     {
-      if(arr[i] < arr[i+1] && creciente == 1)
-      {
-        creciente = 1;
-      }
-      else
-      {
-        creciente = 0;
-      }
-      if(arr[i] > arr[i+1] && decreciente == 1)
-      {
-        decreciente = 1;
-      }
-      else
-      {
-        decreciente = 0;
-      }
+      creciente = 1;
     }
-    if (creciente == 1)
+    else
     {
-      return 1;
+      creciente = 0;
     }
-    else if (decreciente == 1)
+    if(arr[i] > arr[i+1] && decreciente == 1)
+    {
+      decreciente = 1;
+    }
+    else
+    {
+      decreciente = 0;
+    }
+  }
+  if (creciente == 1)
+  {
+    return 1;
+  }
+  else 
+    if (decreciente == 1)
     {
       return -1;
     }
