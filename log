@@ -83,3 +83,22 @@ exercises.c:16:34: error: expected ‘;’ before ‘)’ token
 exercises.c:16:34: error: expected statement before ‘)’ token
 Compilation failed
 c068133
+Fri 15 Mar 2024 09:12:39 PM UTC: 
+ exercises.c | 5 +++++
+ 1 file changed, 5 insertions(+)
+In file included from test.c:1:
+exercises.c: In function ‘findMax’:
+exercises.c:21:3: error: expected ‘,’ or ‘;’ before ‘for’
+   21 |   for (int i = 1 ; i < size ; i++)
+      |   ^~~
+exercises.c:21:20: error: ‘i’ undeclared (first use in this function)
+   21 |   for (int i = 1 ; i < size ; i++)
+      |                    ^
+exercises.c:21:20: note: each undeclared identifier is reported only once for each function it appears in
+exercises.c:21:34: error: expected ‘;’ before ‘)’ token
+   21 |   for (int i = 1 ; i < size ; i++)
+      |                                  ^
+      |                                  ;
+exercises.c:21:34: error: expected statement before ‘)’ token
+Compilation failed
+9227167
