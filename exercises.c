@@ -61,18 +61,18 @@ int *filterEvenNumbers(int arr[], int size, int *newSize)
   if (size <= 0)
     return NULL;
 
-  int *newArr = malloc(size * sizeof(int));
-  int count = 0;
+  int *arreglo = malloc(size * sizeof(int));
+  int contador = 0;
   for (int i = 0 ; i < size ; i++)
     {
       if (arr[i] % 2 == 0)
       {
-        newArr[count] = arr[i];
-        count++;
+        arreglo[contador] = arr[i];
+        contador++;
       }
     }
-  *newSize = count;
-  return newArr;    
+  *newSize = contador;
+  return arreglo;    
   
   return NULL; 
 }
