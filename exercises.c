@@ -39,15 +39,15 @@ void reverseArray(int arr[], int size)
   {
     return;
   }
-  int start = 0;
-  int end = size - 1;
-  while (start < end)
+  int inicio = 0;
+  int final = size - 1;
+  while (inicio < final)
     {
-      int temp = arr[start];
-      arr[start] = arr[end];
-      arr[end] = temp;
-      start++;
-      end--;
+      int temp = arr[inicio];
+      arr[inicio] = arr[final];
+      arr[final] = temp;
+      inicio++;
+      final--;
     }
 }
 
