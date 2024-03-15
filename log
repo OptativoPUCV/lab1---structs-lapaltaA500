@@ -64,3 +64,22 @@ exercises.c:32:7: error: unused variable ‘temp’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 15e7b5e
+Fri 15 Mar 2024 09:10:59 PM UTC: 
+ exercises.c | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+In file included from test.c:1:
+exercises.c: In function ‘findMax’:
+exercises.c:16:3: error: expected ‘,’ or ‘;’ before ‘for’
+   16 |   for (int i = 1 ; i < size ; i++)
+      |   ^~~
+exercises.c:16:20: error: ‘i’ undeclared (first use in this function)
+   16 |   for (int i = 1 ; i < size ; i++)
+      |                    ^
+exercises.c:16:20: note: each undeclared identifier is reported only once for each function it appears in
+exercises.c:16:34: error: expected ‘;’ before ‘)’ token
+   16 |   for (int i = 1 ; i < size ; i++)
+      |                                  ^
+      |                                  ;
+exercises.c:16:34: error: expected statement before ‘)’ token
+Compilation failed
+c068133
